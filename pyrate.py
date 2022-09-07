@@ -147,10 +147,10 @@ def treat(f_path):
 
             results.seek(0)
 
-            json = json.dumps(f_data, indent=4)
+            js = json.dumps(f_data, indent=4)
 
             # Write to result file
-            results.write(json)
+            results.write(js)
 
     except:
         fail("Failed to write scan results. The file will be considered as not sanitized.")
