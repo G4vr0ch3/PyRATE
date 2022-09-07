@@ -38,7 +38,10 @@ def ext_img(path_in, path_out, r=True):
     info("Attempting data extraction for image " + path_in.split("/")[-1])
 
     try:
+        # Open image file
         img_in = PI.open(path_in)
+
+        # Get image dimension (pixels x pixels)
         (l,h) = img_in.size
 
     except:
@@ -46,13 +49,18 @@ def ext_img(path_in, path_out, r=True):
         return False, ''
 
     try:
+        # Create new image
         img_out = PI.new(img_in.mode, (l, h))
 
+        # Fill new image pixel by pixel
         for i in range(l):
             for j in range(h):
+                # Get pixel color
                 pix = PI.Image.getpixel(img_in, (i,j))
+                # Fill pixel
                 img_out.putpixel((i,j), pix)
 
+        # Save image
         img_out.save(path_out)
 
     except:
