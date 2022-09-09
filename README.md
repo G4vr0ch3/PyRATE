@@ -1,4 +1,4 @@
-# Pyrate documentation
+# PyRATE documentation
 
 > :information_source: This software was developed as part of a bigger project. To read about it, please refer to my [USB Malware Cleaner Kiosk](https://github.com/G4vr0ch3/USB-Malware-Cleaner-Kiosk) repository.
 
