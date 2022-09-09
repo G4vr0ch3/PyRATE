@@ -120,7 +120,7 @@ The treatment will preserve pages count, pages names and cell values. Diagrams w
 
 ## Proof of concept
 
-To challenge the software, we tested different malware infected files and analyzed them on the VirusTotal [REFVIRUSTOTAL] website before treatment and after. For example, we tested a Microsoft Office Word document with the “.docx” extension that we compromised using a public exploit for the “Follina” Common Vulnerability and Exposure (CVE-2022-30190). This vulnerability allows an attacker under certain circumstances to execute arbitrary code on the victim’s terminal when the document is accessed. For safety reasons, the exploit was used in an innocuous manner: it would only launch “calc.exe”, the calculation program embedded in in Windows OS.
+To challenge the software, we tested different malware infected files and analyzed them on the [VirusTotal](https://virustotal.com) website before treatment and after. For example, we tested a Microsoft Office Word document with the “.docx” extension that we compromised using a public exploit for the “Follina” Common Vulnerability and Exposure (CVE-2022-30190). This vulnerability allows an attacker under certain circumstances to execute arbitrary code on the victim’s terminal when the document is accessed. For safety reasons, the exploit was used in an innocuous manner: it would only launch “calc.exe”, the calculation program embedded in in Windows OS.
 
 The document was flagged as malicious by 34 security vendors on VirusTotal (ClamAV, Windows Defender and Kaspersky included).
 With these results in mind, we tried to sanitize the file using the following command:
