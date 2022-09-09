@@ -8,12 +8,6 @@
 
 > :warning: This python software is intended for Linux OS powered terminals. It requires a few pieces of software to work that may not be indicated in this documentation.
 
-##
-
-PyRATE : Python Recomposition of AlTered Elements. Copyright (C) 2022 Gavroche, Roxane.
-
-##
-
 ## Installation
 
 The source of the software is hosted on github and should be cloned as follows:
@@ -162,6 +156,8 @@ We repeated the experiment with some of the other formats such as:
 -	“.docm”, “.xlsm”, “.pptm” with embedded malicious macros
 -	“.doc”
 -	“.png” with malicious EXIF data
+
+
 With the software successfully passing these tests, we validated its use for in our project.
 
 However, the previous experimentations do not demonstrate the software’s robustness. One could try and find a way to exploit one of the file treatments to escape the sanitizing process. This will be considered as out of scope for the project.
