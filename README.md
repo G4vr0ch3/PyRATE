@@ -12,6 +12,8 @@
 
 PyRATE : Python Recomposition of AlTered Elements. Copyright (C) 2022 Gavroche, Roxane.
 
+##
+
 ## Installation
 
 The source of the software is hosted on github and should be cloned as follows:
