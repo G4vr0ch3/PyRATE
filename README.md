@@ -8,6 +8,12 @@
 
 > :warning: This python software is intended for Linux OS powered terminals. It requires a few pieces of software to work that may not be indicated in this documentation.
 
+##
+
+PyRATE: Python Recomposition of AlTered Elements. Copyrights (C) 2022 Gavroche, Roxane.
+
+##
+
 ## Installation
 
 The source of the software is hosted on github and should be cloned as follows:
