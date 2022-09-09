@@ -68,7 +68,7 @@ Any other file type is not supported (and files of said type will not be copied 
 
 When the Frontend is asked to sanitize files, it receives a list of the files. Pyrate takes a file path as an argument and will attempt to sanitize one file at a time. It will first identify the file’s format by comparing its magic number to a dictionary of magic numbers. If the file’s type is not part of the supported files, the software will stop trying to sanitize the file and return the information. If the format is recognized, the program will call the sanitizing function from the appropriate library to clean the file.
 
-| ![pyrate.png](https://raw.githubusercontent.com/G4vr0ch3/Pyrate/main/pic/pyrate.png) |
+| ![pyrate.png](pic/pyrate.png) |
 |:--:|
 | <b>Software architecture</b>|
 
