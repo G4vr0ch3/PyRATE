@@ -45,19 +45,19 @@ The “test” function will test the different functions of the software.
 ## Supported file formats
 
 In its current state the software supports the following file signatures:
-•	Images in PNG and JPG (JPG, JPEG) formats.
-•	Microsoft Office Word documents in .doc, .docx and .docm formats.
-•	Microsoft Office Excel spreadsheets in .xls, .xlsx and .xlsm formats.
-•	Microsoft Office PowerPoint presentations in .pptx and .pptm formats.
-•	LibreOffice Writer documents in .odt and .ott formats.
-•	LibreOffice Calc spreadsheets in .ods format.
-•	LibreOffice Impress presentations in .odp format.
-•	Portable Document Format (PDF) in .pdf format.
+-	Images in PNG and JPG (JPG, JPEG) formats.
+-	Microsoft Office Word documents in .doc, .docx and .docm formats.
+-	Microsoft Office Excel spreadsheets in .xls, .xlsx and .xlsm formats.
+-	Microsoft Office PowerPoint presentations in .pptx and .pptm formats.
+-	LibreOffice Writer documents in .odt and .ott formats.
+-	LibreOffice Calc spreadsheets in .ods format.
+-	LibreOffice Impress presentations in .odp format.
+-	Portable Document Format (PDF) in .pdf format.
 
 Some formats will never be supported for sanitizing due to the complexity of the process such as:
-•	Executable files (.exe, binaries)
-•	Dynamic Link Libraries (.dll)
-•	Any malicious script in any programming language (.ps1, .py, .sh, .pl, .rb, .php, etc.)
+-	Executable files (.exe, binaries)
+-	Dynamic Link Libraries (.dll)
+-	Any malicious script in any programming language (.ps1, .py, .sh, .pl, .rb, .php, etc.)
 Should one of these types of files be identified as malicious, they will remain untouched and will not be copied to the output medium.
 
 Some files may also be flagged as malicious because of their content while not being dangerous as is (e.g. Text documents, XML documents, etc.). To protect ingenuous users, these files will not be copied to the output medium.
