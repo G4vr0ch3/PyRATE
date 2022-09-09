@@ -117,3 +117,42 @@ The treatment will preserve pages count, pages names and cell values. Diagrams w
 
 **Hash.py**: This is a library that aims at helping in checking data integrity. It relies on the “hashlib” python library and the “sha512” (Secure Hash Algorithm-512) cryptographic hash algorithm. The main function takes a file path as an argument and returns the sha512-hash for the file.
 “hash.py” is not licensed.
+
+## Proof of concept
+
+To challenge the software, we tested different malware infected files and analyzed them on the VirusTotal [REFVIRUSTOTAL] website before treatment and after. For example, we tested a Microsoft Office Word document with the “.docx” extension that we compromised using a public exploit for the “Follina” Common Vulnerability and Exposure (CVE-2022-30190). This vulnerability allows an attacker under certain circumstances to execute arbitrary code on the victim’s terminal when the document is accessed. For safety reasons, the exploit was used in an innocuous manner: it would only launch “calc.exe”, the calculation program embedded in in Windows OS.
+
+The document was flagged as malicious by 34 security vendors on VirusTotal (ClamAV, Windows Defender and Kaspersky included).
+With these results in mind, we tried to sanitize the file using the following command:
+
+```bash
+~$ ./pyrate.py -f Inputs/clickme.docx
+```
+
+The process succeeded and output a new “out_clickme.docx” file in the “Outputs” folder which we then analyzed with VirusTotal.
+The file was not flagged as malware by any AV vendor.
+
+With these encouraging results, we checked that the new document would not launch “calc.exe” on opening which it did not. We concluded that the software was working correctly for “.docx” documents.
+We repeated the experiment with some of the other formats such as:
+-	“.pdf”
+-	“.docm”, “.xlsm”, “.pptm” with embedded malicious macros
+-	“.doc”
+-	“.png” with malicious EXIF data
+With the software successfully passing these tests, we validated its use for in our project.
+
+However, the previous experimentations do not demonstrate the software’s robustness. One could try and find a way to exploit one of the file treatments to escape the sanitizing process. This will be considered as out of scope for the project.
+
+## Contributing to the project
+
+We will gladly accept any valuable input !  
+Should you have any remarks, advice or whatever you deem useful to us, please contact me either via:
+
+> [e-mail](mailto:gavrochebackups@gmail.com)  
+> [Discord](https://discordapp.com/users/Gavroche#2871)  
+> [Twitter](https://twitter.com/Gvrch3)
+
+Many thanks !
+
+##
+
+[Gavroche](https://github.com/G4vr0ch3)
