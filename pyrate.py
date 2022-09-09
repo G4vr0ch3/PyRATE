@@ -27,13 +27,6 @@
 ################################################################################
 
 
-if __name__ != '__main__':
-    print("This is not a library. Please read the software's documentation")
-
-
-################################################################################
-
-
 import argparse
 import json
 
