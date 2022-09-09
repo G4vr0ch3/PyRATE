@@ -132,6 +132,10 @@ The treatment will preserve pages count, pages names and cell values. Diagrams w
 
 To challenge the software, we tested different malware infected files and analyzed them on the [VirusTotal](https://virustotal.com) website before treatment and after. For example, we tested a Microsoft Office Word document with the “.docx” extension that we compromised using a public exploit for the “Follina” Common Vulnerability and Exposure (CVE-2022-30190). This vulnerability allows an attacker under certain circumstances to execute arbitrary code on the victim’s terminal when the document is accessed. For safety reasons, the exploit was used in an innocuous manner: it would only launch “calc.exe”, the calculation program embedded in in Windows OS.
 
+| ![VirusTotal](pic/bad_docx.png) |
+| :-: |
+| VirusTotal analysis before sanitization |
+
 The document was flagged as malicious by 34 security vendors on VirusTotal (ClamAV, Windows Defender and Kaspersky included).
 With these results in mind, we tried to sanitize the file using the following command:
 
@@ -141,6 +145,10 @@ With these results in mind, we tried to sanitize the file using the following co
 
 The process succeeded and output a new “out_clickme.docx” file in the “Outputs” folder which we then analyzed with VirusTotal.
 The file was not flagged as malware by any AV vendor.
+
+| ![VirusTotal](pic/good_docx.png) |
+| :-: |
+| VirusTotal analysis after sanitization |
 
 With these encouraging results, we checked that the new document would not launch “calc.exe” on opening which it did not. We concluded that the software was working correctly for “.docx” documents.
 We repeated the experiment with some of the other formats such as:
