@@ -1,5 +1,13 @@
 # Pyrate documentation
 
+> :information_source: This software was developed as part of a bigger project. To read about it, please refer to my [USB Malware Cleaner Kiosk](https://github.com/G4vr0ch3/USB-Malware-Cleaner-Kiosk) repository.
+
+
+> :information_source: This software is a component of the Frontend.
+
+
+> :warning: This python software is intended for Linux OS powered terminals. It requires a few pieces of software to work that may not be indicated in this documentation.
+
 ## Installation
 
 The source of the software is hosted on github and should be cloned as follows:
@@ -83,7 +91,7 @@ The treatment will preserve the image resolution as well as graphical content.
 
 **Common_bin.py**: This is a library that aims at hosting common functions to parse binary files and retrieve content. It possesses multiple parsing functions that will analyze the bytes of the binary. It will identify the existence and locations of images using magic numbers and end of file (EOF) termination bytes. It then relies on PIL to convert the bytes to an image file. Each image file is then treated by the “imgs.py” library. It creates files in the “Outputs” folder. The parsing functions take paths as arguments and will return lists containing the retrieved data in the appropriate form (paths, bytes, …).
 
-**Docs.py**: This is a library that aims at sanitizing Microsoft Office Word documents with the “.doc” extension. This type of word document is actually a single binary file containing the document’s content. The main sanitizing function takes a file path as an argument and first deconstructs before building a new “.docx” document. To extract the text from the document, it relies on the Antiword software [ANTIW] which is Open-Source software released under a GPL License by Adri van Os. This also provides the global layout of the document. To retrieve images from the documents, the software relies on the “common_bin.py” library’s functions. To create the new document, the software relies on the “pi-docx” library. The main sanitizing function will return “True” and the output’s path if the treatment succeeded and «False» and an empty file path if it did not. The sanitized file will be in the “Outputs” folder.
+**Docs.py**: This is a library that aims at sanitizing Microsoft Office Word documents with the “.doc” extension. This type of word document is actually a single binary file containing the document’s content. The main sanitizing function takes a file path as an argument and first deconstructs before building a new “.docx” document. To extract the text from the document, it relies on the [Antiword](http://www.winfield.demon.nl/) software which is Open-Source software released under a GPL License by Adri van Os. This also provides the global layout of the document. To retrieve images from the documents, the software relies on the “common_bin.py” library’s functions. To create the new document, the software relies on the “pi-docx” library. The main sanitizing function will return “True” and the output’s path if the treatment succeeded and «False» and an empty file path if it did not. The sanitized file will be in the “Outputs” folder.
 The treatment will preserve text paragraphs, images, lists, text areas content and tables.
 
 **Docxs.py**: This is a library that aims at sanitizing Microsoft Office Word documents with the “.docx” or “.docm” extension. The latter file type can embed macros which, when activated, can execute malicious code on the victim’s terminal. This kind of document is an archive containing a variety of files dissecting its layout and content. The main sanitizing function takes a file path as an argument and proceeds to first extracting the relevant data from the archive before building a new “.docx” document. To extract the text and layout of the document, it relies on functions that parse the “document.xml” file contained in the archive. The different nodes of the file will provide the various section types and content. To gather the images embedded in the document, it extracts the content from the media folder of the archive. The images are then processed by the “imgs.py” library. To create the new document, the software relies on the “pi-docx” library. The main sanitizing function will return “True” and the output’s path if the treatment succeeded and «False» and an empty file path if it did not. The sanitized file will be in the “Outputs” folder.
