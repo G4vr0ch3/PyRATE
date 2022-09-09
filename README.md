@@ -10,7 +10,9 @@
 
 ##
 
-PyRATE : Python Recomposition of AlTered Elements. Copyright (C) 2022 Gavroche, Roxane.##
+PyRATE : Python Recomposition of AlTered Elements. Copyright (C) 2022 Gavroche, Roxane.
+
+##
 
 ## Installation
 
