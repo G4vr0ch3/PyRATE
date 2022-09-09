@@ -112,10 +112,10 @@ The treatment will preserve pages count, pages names and cell values. Diagrams w
 -	Green: success
 -	Blue: information
 -	Orange: warnings
--	Red: failures
+-	Red: failures  
 “prints.py” is not licensed.
 
-**Hash.py**: This is a library that aims at helping in checking data integrity. It relies on the “hashlib” python library and the “sha512” (Secure Hash Algorithm-512) cryptographic hash algorithm. The main function takes a file path as an argument and returns the sha512-hash for the file.
+**Hash.py**: This is a library that aims at helping in checking data integrity. It relies on the “hashlib” python library and the “sha512” (Secure Hash Algorithm-512) cryptographic hash algorithm. The main function takes a file path as an argument and returns the sha512-hash for the file.  
 “hash.py” is not licensed.
 
 ## Proof of concept
