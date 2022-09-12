@@ -50,7 +50,7 @@ def get_layout(path):
 
     # Execute os command
     pipe = subprocess.Popen(
-        'antiword {}'.format(path), shell=True,
+        'antiword "{}"'.format(path), shell=True,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE,
     )
 
@@ -92,6 +92,8 @@ def build_text(doc, raw_txt, index):
 
     # Text from bytes
     beautify = raw_txt[index].decode().strip()
+
+    print(beautify)
 
     doc.add_paragraph(beautify)
 
@@ -221,7 +223,12 @@ def sanitiz(path):
         layout = get_layout(path)
         img_list = common_bin.img_parser(path)
 
-        if len(img_list) != layout.count('img'): warning('Image count from layout and retrieved image count differ. The document images might not appear as attended. This is quite common and not fatal.')
+
+        try:
+            if len(img_list) != layout.count('img'): warning('Image count from layout and retrieved image count differ. The document images might not appear as attended. This is quite common and not fatal.')
+        except:
+            pass
+
 
     except:
         fail('Data extraction failed')

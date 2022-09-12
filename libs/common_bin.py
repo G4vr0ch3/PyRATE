@@ -214,6 +214,8 @@ def img_parser(path):
     info('Fetching PNG images.')
     bin += png_parser(bts)
 
+    if bin == []: return exp
+
     # Sort images based on there start offset in document
     bin = sort_imgs(bin)
 
