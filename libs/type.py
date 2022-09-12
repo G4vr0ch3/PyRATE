@@ -89,6 +89,10 @@ def identifier(path):
             case 'pdf':
                 typ = 'pdf'
                 success('File identified as portable file format')
+                
+            case 'doc':
+                typ = 'doc'
+                success('File identified as RDF/DOC binary with extension .' + path.split(".")[-1])
 
             case _:
                 typ = None
