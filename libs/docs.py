@@ -93,8 +93,6 @@ def build_text(doc, raw_txt, index):
     # Text from bytes
     beautify = raw_txt[index].decode().strip()
 
-    print(beautify)
-
     doc.add_paragraph(beautify)
 
 
