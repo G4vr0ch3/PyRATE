@@ -167,17 +167,17 @@ def treat(f_path):
 
 if __name__ == '__main__':
 
-    # Software definition
-    print(pff("Pyrate"))
-
     # Argument parser creation
     parser = argparse.ArgumentParser(description='PYthon Recomposition of AlTered Elements. Copyright (C) 2022 Gavroche, Roxane.')
 
     parser.add_argument('--test', help="Run software test", action="store_true")
     parser.add_argument('-f', metavar='file', type=str, help="Target file path")
+    parser.add_argument('-b', help="Disable banner", action="store_true")
     parser.add_argument('-r', help="Source file removal flag", action="store_true")
 
     args=parser.parse_args()
+
+    if args.b is not True: print(pff("Pyrate"))
 
     if args.test: tests(); exit()
 
