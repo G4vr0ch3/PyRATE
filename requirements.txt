@@ -1,10 +1,10 @@
 docx==0.2.4
 odfpy==1.4.1
+openpyxl==3.0.9
 pdf2image==1.16.0
 Pillow==9.2.0
 pyexcel_ods==0.6.0
 pyfiglet==0.8.post0
 python_docx==0.8.11
 python_pptx==0.6.18
-xlrd==1.2.0
 xlsxwriter==3.0.3

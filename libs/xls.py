@@ -29,7 +29,7 @@
 
 import xlsxwriter
 
-from xlrd import open_workbook
+from openpyxl import Workbook
 
 
 ################################################################################
@@ -39,10 +39,10 @@ from xlrd import open_workbook
 def get_sheets(path):
 
     # Storing document data
-    workbook = open_workbook(path)
+    workbook = Workbook(path)
 
     # Retrieve sheet names
-    sheet_names=workbook.sheet_names()
+    sheet_names=workbook.sheetnames
 
     sheets = []
 
