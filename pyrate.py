@@ -111,7 +111,7 @@ def treat(f_path):
 
         case None:
 
-            exit()
+            stat, o_path = False, ''
 
         case _:
 
