@@ -23,6 +23,7 @@ try:
     if reqs.wait() != 0: 
         done = False
         print(reqs.stderr)
+        print('Requirements installation failed.')
 except:
     print('Requirements installation failed.')
     done = False
@@ -31,5 +32,11 @@ if done:
     from Asterix_libs.prints import success
     success('Done !')
 else:
-    from Asterix_libs.prints import fail
-    fail('Setup failed. Did you run the programm as root ?')
+    try:
+        subprocess.call('/usr/bin/mv Asterix_libs tmp_', shell = True)
+        from Asterix_libs.prints import fail
+        fail('Setup failed. Asterix libraries were imported correctly but requirements are probably not met.')
+        subprocess.call('/usr/bin/mv tmp_ Asterix_libs', shell = True)
+    except:
+        from Asterix_libs.prints import fail
+        fail('Setup failed. Did you run setup.py as root ?')
