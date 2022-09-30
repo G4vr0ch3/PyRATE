@@ -7,17 +7,24 @@ import os
 done = False
 
 for i in sys.path:
-    if os.isdir(i): 
-        try: 
-            subprocess.run(f'/usr/bin/mv Asterix_libs {i}')
-            done = True
-            break
+    if os.path.isdir(i) and i != "": 
+        try:
+            libs = subprocess.Popen(f'/usr/bin/cp -r Asterix_libs {i}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if libs.wait() == 0: 
+                done = True
+                print('Libraries added to python path.')
+                subprocess.call('/usr/bin/rm -r Asterix_libs', shell = True)
+                break
         except:
             pass
 
 try:
-    subprocess.call('/usr/bin/pip install -r ./requirements.txt')
+    reqs = subprocess.Popen('/usr/bin/pip install -r requirements.txt', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if reqs.wait() != 0: 
+        done = False
+        print(reqs.stderr)
 except:
+    print('Requirements installation failed.')
     done = False
 
 if done:
@@ -25,4 +32,4 @@ if done:
     success('Done !')
 else:
     from Asterix_libs.prints import fail
-    fail('Setup failed.')
+    fail('Setup failed. Did you run the programm as root ?')
