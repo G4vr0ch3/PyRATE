@@ -32,9 +32,11 @@ import json
 
 from pyfiglet import figlet_format as pff
 
-from libs import docs, docxs, hash, imgs, odp, ods, odt, pdfs, pptxs, prints, type, xls
+from libs import docs, docxs, imgs, odp, ods, odt, pdfs, pptxs, type, xls
 from datetime import datetime
-from libs.prints import *
+from Asterix_libs import hash
+
+from Asterix_libs.prints import *
 
 
 ################################################################################
