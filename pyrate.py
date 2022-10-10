@@ -29,6 +29,7 @@
 
 import argparse
 import json
+import os
 
 from pyfiglet import figlet_format as pff
 
@@ -133,7 +134,7 @@ def treat(f_path):
                 "FileName": f_path.split("/")[-1],
                 "FileType": f_type,
                 "SANSTat": stat,
-                "OUTPATH": o_path,
+                "OUTPATH": os.getcwd() + '/' + o_path,
                 "HASH": hash.sha(o_path),
             }
 
