@@ -256,5 +256,5 @@ if __name__ == "__main__":
     exit()
 
 else:
-    from .prints import *
+    from Asterix_libs.prints import *
     from .imgs import *

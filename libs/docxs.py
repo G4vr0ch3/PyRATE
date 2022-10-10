@@ -285,4 +285,4 @@ if __name__ == "__main__":
 
 else:
     from .imgs import *
-    from .prints import *
+    from Asterix_libs.prints import *
