@@ -31,6 +31,9 @@ import os
 import PIL.Image as PI
 
 
+from Asterix_libs.spinner import spinner
+
+
 ################################################################################
 
 
@@ -48,24 +51,26 @@ def ext_img(path_in, path_out, r=True):
         fail("Could not open source file.")
         return False, ''
 
-    try:
-        # Create new image
-        img_out = PI.new(img_in.mode, (l, h))
+    with spinner(f'Sanitizing {path_in.split("/")[-1]} ...'):
 
-        # Fill new image pixel by pixel
-        for i in range(l):
-            for j in range(h):
-                # Get pixel color
-                pix = PI.Image.getpixel(img_in, (i,j))
-                # Fill pixel
-                img_out.putpixel((i,j), pix)
+        try:
+            # Create new image
+            img_out = PI.new(img_in.mode, (l, h))
 
-        # Save image
-        img_out.save(path_out)
+            # Fill new image pixel by pixel
+            for i in range(l):
+                for j in range(h):
+                    # Get pixel color
+                    pix = PI.Image.getpixel(img_in, (i,j))
+                    # Fill pixel
+                    img_out.putpixel((i,j), pix)
 
-    except:
-        fail("Data extraction attempt failed.")
-        return False, ''
+            # Save image
+            img_out.save(path_out)
+
+        except:
+            fail("Data extraction attempt failed.")
+            return False, ''
 
     success('Document sanitized successfully.')
 
