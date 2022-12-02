@@ -1,6 +1,6 @@
 # PyRATE documentation
 
-> :information_source: This software was developed as part of a bigger project. To read about it, please refer to my [USB Malware Cleaner Kiosk](https://github.com/G4vr0ch3/USB-Malware-Cleaner-Kiosk) repository.
+> :information_source: This software was developed as part of a bigger project. To read about it, please refer to my [USB Malware Cleaner Kiosk](https://github.com/PetitPrinc3/USB-Malware-Cleaner-Kiosk) repository.
 
 
 > :information_source: This software is a component of the Frontend.
@@ -18,7 +18,7 @@ PyRATE: Python Recomposition of AlTered Elements. Copyrights (C) 2022 Gavroche, 
 
 The source of the software is hosted on github and should be cloned as follows:
 ```bash
-~$ git clone https://github.com/G4vr0ch3/Pyrate
+~$ git clone https://github.com/PetitPrinc3/Pyrate
 ```
 Before using the software, requirements have to be installed using:
 
@@ -181,4 +181,4 @@ Many thanks !
 
 ##
 
-[Gavroche](https://github.com/G4vr0ch3)
+[Gavroche](https://github.com/PetitPrinc3)
